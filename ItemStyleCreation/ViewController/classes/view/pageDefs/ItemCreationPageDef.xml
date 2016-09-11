@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="ItemCreationPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XxChildSkusView1" RangeSize="25" DataControl="AppModuleDataControl" id="XxChildSkusView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="XxChildSkusView1Iterator" id="XxChildSkusView1">
+      <nodeDefinition DefName="model.XxChildSkusView" Name="XxChildSkusView10">
+        <AttrNames>
+          <Item Value="Mastersku"/>
+          <Item Value="Color"/>
+          <Item Value="Code"/>
+          <Item Value="Size1"/>
+          <Item Value="Size2"/>
+          <Item Value="Size3"/>
+          <Item Value="Size4"/>
+          <Item Value="Size5"/>
+          <Item Value="Size6"/>
+          <Item Value="Size7"/>
+          <Item Value="Size8"/>
+          <Item Value="Size9"/>
+          <Item Value="Size10"/>
+          <Item Value="Size11"/>
+          <Item Value="Size12"/>
+          <Item Value="Size13"/>
+          <Item Value="Size14"/>
+          <Item Value="Size15"/>
+          <Item Value="Size16"/>
+          <Item Value="Size17"/>
+          <Item Value="Size18"/>
+          <Item Value="Size1Descr"/>
+          <Item Value="MasterskuDescr"/>
+          <Item Value="Size9Descr"/>
+          <Item Value="Size8Descr"/>
+          <Item Value="Size7Descr"/>
+          <Item Value="Size6Descr"/>
+          <Item Value="Size5Descr"/>
+          <Item Value="Size4Descr"/>
+          <Item Value="Size3Descr"/>
+          <Item Value="Size2Descr"/>
+          <Item Value="Size18Descr"/>
+          <Item Value="Size17Descr"/>
+          <Item Value="Size16Descr"/>
+          <Item Value="Size15Descr"/>
+          <Item Value="Size14Descr"/>
+          <Item Value="Size13Descr"/>
+          <Item Value="Size12Descr"/>
+          <Item Value="Size11Descr"/>
+          <Item Value="Size10Descr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="XxChildSkusView1Iterator" id="Mastersku">
+      <AttrNames>
+        <Item Value="Mastersku"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxChildSkusView1Iterator" id="MasterskuDescr">
+      <AttrNames>
+        <Item Value="MasterskuDescr"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="XxChildSkusView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="XxChildSkusView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
