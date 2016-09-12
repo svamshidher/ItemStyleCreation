@@ -1,0 +1,213 @@
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+  <Reference name="Connection1" className="oracle.jdeveloper.db.adapter.DatabaseProvider"
+             credentialStoreKey="Connection1" xmlns="">
+    <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+    <RefAddresses>
+      <StringRefAddr addrType="sid">
+        <Contents>orcl</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="subtype">
+        <Contents>oraJDBC</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="user">
+        <Contents>system</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="hostname">
+        <Contents>localhost</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="port">
+        <Contents>1521</Contents>
+      </StringRefAddr>
+      <SecureRefAddr addrType="password"/>
+      <StringRefAddr addrType="oraDriverType">
+        <Contents>thin</Contents>
+      </StringRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="TaskListPortlet-wsconn"
+             className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://10.100.200.12:8889/TaskListPortlet/portlets/wsrp2?WSDL">
+            <model name="{urn:oasis:names:tc:wsrp:v2:wsdl}WSRP_v2_Service" xmlns="http://oracle.com/ws/model">
+              <service name="{urn:oasis:names:tc:wsrp:v2:wsdl}WSRP_v2_Service">
+                <port name="WSRP_v2_ServiceDescription_Service"
+                      binding="{urn:oasis:names:tc:wsrp:v2:bind}WSRP_v2_ServiceDescription_Binding_SOAP">
+                  <soap addressUrl="http://10.100.200.12:8889/TaskListPortlet/portlets/WSRP_v2_ServiceDescription_Service"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="getServiceDescription">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:getServiceDescription"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="getServiceDescription"/>
+                    <output name="getServiceDescriptionResponse"/>
+                  </operation>
+                </port>
+                <port name="WSRP_v2_PortletManagement_Service"
+                      binding="{urn:oasis:names:tc:wsrp:v2:bind}WSRP_v2_PortletManagement_Binding_SOAP">
+                  <soap addressUrl="http://10.100.200.12:8889/TaskListPortlet/portlets/WSRP_v2_PortletManagement_Service"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="getPortletDescription">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:getPortletDescription"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="getPortletDescription"/>
+                    <output name="getPortletDescriptionResponse"/>
+                  </operation>
+                  <operation name="clonePortlet">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:clonePortlet"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="clonePortlet"/>
+                    <output name="clonePortletResponse"/>
+                  </operation>
+                  <operation name="destroyPortlets">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:destroyPortlets"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="destroyPortlets"/>
+                    <output name="destroyPortletsResponse"/>
+                  </operation>
+                  <operation name="getPortletsLifetime">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:getPortletsLifetime"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="getPortletsLifetime"/>
+                    <output name="getPortletsLifetimeResponse"/>
+                  </operation>
+                  <operation name="setPortletsLifetime">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:setPortletsLifetime"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="setPortletsLifetime"/>
+                    <output name="setPortletsLifetimeResponse"/>
+                  </operation>
+                  <operation name="copyPortlets">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:copyPortlets"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="copyPortlets"/>
+                    <output name="copyPortletsResponse"/>
+                  </operation>
+                  <operation name="exportPortlets">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:exportPortlet"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="exportPortlets"/>
+                    <output name="exportPortletsResponse"/>
+                  </operation>
+                  <operation name="importPortlets">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:importPortlet"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="importPortlets"/>
+                    <output name="importPortletsResponse"/>
+                  </operation>
+                  <operation name="releaseExport">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:importPortlet"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="releaseExport"/>
+                    <output name="releaseExportResponse"/>
+                  </operation>
+                  <operation name="setExportLifetime">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:setExportLifetime"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="setExportLifetime"/>
+                    <output name="setExportLifetimeResponse"/>
+                  </operation>
+                  <operation name="setPortletProperties">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:setPortletProperties"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="setPortletProperties"/>
+                    <output name="setPortletPropertiesResponse"/>
+                  </operation>
+                  <operation name="getPortletProperties">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:getPortletProperties"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="getPortletProperties"/>
+                    <output name="getPortletPropertiesResponse"/>
+                  </operation>
+                  <operation name="getPortletPropertyDescription">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:getPortletPropertyDescription"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="getPortletPropertyDescription"/>
+                    <output name="getPortletPropertyDescriptionResponse"/>
+                  </operation>
+                </port>
+                <port name="WSRP_v2_Markup_Service"
+                      binding="{urn:oasis:names:tc:wsrp:v2:bind}WSRP_v2_Markup_Binding_SOAP">
+                  <soap addressUrl="http://10.100.200.12:8889/TaskListPortlet/portlets/WSRP_v2_Markup_Service"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="getMarkup">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:getMarkup"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="getMarkup"/>
+                    <output name="getMarkupResponse"/>
+                  </operation>
+                  <operation name="getResource">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:getResource"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="getResource"/>
+                    <output name="getResourceResponse"/>
+                  </operation>
+                  <operation name="performBlockingInteraction">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:performBlockingInteraction"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="performBlockingInteraction"/>
+                    <output name="performBlockingInteractionResponse"/>
+                  </operation>
+                  <operation name="handleEvents">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:handleEvents"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="handleEvents"/>
+                    <output name="handleEventsResponse"/>
+                  </operation>
+                  <operation name="releaseSessions">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:releaseSessions"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="releaseSessions"/>
+                    <output name="releaseSessionsResponse"/>
+                  </operation>
+                  <operation name="initCookie">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:initCookie"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="initCookie"/>
+                    <output name="initCookieResponse"/>
+                  </operation>
+                </port>
+                <port name="WSRP_v2_Registration_Service"
+                      binding="{urn:oasis:names:tc:wsrp:v2:bind}WSRP_v2_Registration_Binding_SOAP">
+                  <soap addressUrl="http://10.100.200.12:8889/TaskListPortlet/portlets/WSRP_v2_Registration_Service"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="register">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:register"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="register"/>
+                    <output name="registerResponse"/>
+                  </operation>
+                  <operation name="deregister">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:deregister"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="deregister"/>
+                    <output name="deregisterResponse"/>
+                  </operation>
+                  <operation name="modifyRegistration">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:modifyRegistration"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="modifyRegistration"/>
+                    <output name="modifyRegistrationResponse"/>
+                  </operation>
+                  <operation name="getRegistrationLifetime">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:getRegistrationLifetime"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="getRegistrationLifetime"/>
+                    <output name="getRegistrationLifetimeResponse"/>
+                  </operation>
+                  <operation name="setRegistrationLifetime">
+                    <soap soapAction="urn:oasis:names:tc:wsrp:v2:setRegistrationLifetime"
+                          xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name="setRegistrationLifetime"/>
+                    <output name="setRegistrationLifetimeResponse"/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+</References>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <af:document title="Forecast And Orders" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">           
+            <af:selectOneChoice value="#{bindings.Mastersku2.inputValue}" label="Master SKU"
+                                required="#{bindings.Mastersku2.hints.mandatory}"
+                                shortDesc="#{bindings.Mastersku2.hints.tooltip}" id="soc2"                               
+                                autoSubmit="true" binding="#{ForecastAndOrders.masterSKU}"
+                                valueChangeListener="#{ForecastAndOrders.masterSKUValueChangeListner}">
+                <f:selectItems value="#{bindings.Mastersku2.items}" id="si2"/>
+                <f:validator binding="#{bindings.Mastersku2.validator}"/>
+            </af:selectOneChoice>
+            <af:inputText label="Total Order for Style" id="it1" binding="#{ForecastAndOrders.totalOrder}" autoSubmit="true"/>
+            <af:inputText label="Sales forecast Percentage" id="it3" binding="#{ForecastAndOrders.totalPercentage}"/>
+            <af:panelGroupLayout id="pgl1">
+            <af:button text="Create Purchase Order" id="b1"/>
+            <af:button text="Create Sales Order" id="b2"/>
+            <af:button text="Create Sales Forecast" id="b3"/>
+            </af:panelGroupLayout>
+            <af:table var="row" rowBandingInterval="0" id="t1" binding="#{ForecastAndOrders.orderTable}">
+                <af:column sortable="false" headerText="Child SKU" id="c1">
+                    <af:outputText value="#{row.childSKU}" id="ot1"/>
+                </af:column>
+                <af:column sortable="false" headerText="Child SKU Descr" id="c2">
+                    <af:outputText value="#{row.childSKUDescr}" id="ot2"/>
+                </af:column>
+                 <af:column sortable="false" headerText="Sales Forecast %" id="c3">                   
+                    <af:inputText label="Label 1" id="it2" value="#{row.salesForecast}" 
+                    autoSubmit="true"
+                    valueChangeListener="#{ForecastAndOrders.SalesForecastValueChange}"/>
+                 </af:column>
+                  <af:column sortable="false" headerText="Add to Purchase Order" id="c4">
+                    <af:selectBooleanCheckbox label="Label 1" id="sbc1" value="#{row.addtoPurchaseOrder}"/>
+                </af:column>
+                  <af:column sortable="false" headerText="Add to Sales Order" id="c5">
+                    <af:selectBooleanCheckbox label="Label 1" id="sbc2" value="#{row.addtoSalesOrder}"/>
+                </af:column>
+                   <af:column sortable="false" headerText="Order Amount" id="c6">
+                    <af:inputText label="Label 1" id="sbc3" binding="#{ForecastAndOrders.orderAmount}"/>
+                </af:column>
+            </af:table>
+        </af:form>
+    </af:document>
+</f:view>

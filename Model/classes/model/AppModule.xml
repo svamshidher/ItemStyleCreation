@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true"
+  ComponentClass="model.AppModuleImpl"
+  ComponentInterface="model.common.AppModule">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="XxChildSkusView1"
+    ViewObjectName="model.XxChildSkusView"/>
+  <ViewUsage
+    Name="MasterskuLOV1"
+    ViewObjectName="model.MasterskuLOV"/>
+  <ViewUsage
+    Name="ForecastVO1"
+    ViewObjectName="model.ForecastVO"/>
+  <ViewUsage
+    Name="xxGetChildSKUVO1"
+    ViewObjectName="model.xxGetChildSKUVO"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="getChildSKUDetails"
+      MethodName="getChildSKUDetails">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="masterSKU"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="ForecastAndOrdersPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MasterskuLOV1" RangeSize="25" DataControl="AppModuleDataControl" id="MasterskuLOV1Iterator"/>
+    <iterator Binds="ForecastVO1" RangeSize="25" DataControl="AppModuleDataControl" id="ForecastVO1Iterator"/>
+    <iterator Binds="xxGetChildSKUVO1" RangeSize="25" DataControl="AppModuleDataControl" id="xxGetChildSKUVO1Iterator"/>
+  </executables>
+  <bindings>
+    <listOfValues IterBinding="MasterskuLOV1Iterator" StaticList="false" Uses="LOV_Mastersku" id="Mastersku"/>
+    <list IterBinding="MasterskuLOV1Iterator" StaticList="false" Uses="LOV_Mastersku" id="Mastersku1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ForecastVO1Iterator" StaticList="false" Uses="LOV_Mastersku" id="Mastersku2"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="xxGetChildSKUVO1Iterator" id="xxGetChildSKUVO1">
+      <nodeDefinition DefName="model.xxGetChildSKUVO" Name="xxGetChildSKUVO10">
+        <AttrNames>
+          <Item Value="ChildSKU"/>
+          <Item Value="ChildSKUDescription"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="xxGetChildSKUVO1Iterator" id="xxGetChildSKUVO11">
+      <nodeDefinition DefName="model.xxGetChildSKUVO" Name="xxGetChildSKUVO110">
+        <AttrNames>
+          <Item Value="ChildSKU"/>
+          <Item Value="ChildSKUDescription"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="xxGetChildSKUVO1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="xxGetChildSKUVO1Iterator" id="xxGetChildSKUVO12">
+      <nodeDefinition DefName="model.xxGetChildSKUVO" Name="xxGetChildSKUVO120">
+        <AttrNames>
+          <Item Value="ChildSKU"/>
+          <Item Value="ChildSKUDescription"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="getChildSKUDetails" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getChildSKUDetails" IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="data.AppModuleDataControl.dataProvider"
+                  ReturnName="data.AppModuleDataControl.methodResults.getChildSKUDetails_AppModuleDataControl_dataProvider_getChildSKUDetails_result">
+      <NamedData NDName="masterSKU" NDValue="#{ForecastAndOrders.masterSKU}" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

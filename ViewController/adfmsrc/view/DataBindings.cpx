@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.8" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/ItemCreation.jsf" usageId="view_ItemCreationPageDef"/>
+    <page path="/ForecastAndOrders.jsf" usageId="view_ForecastAndOrdersPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_ItemCreationPageDef" path="view.pageDefs.ItemCreationPageDef"/>
+    <page id="view_ForecastAndOrdersPageDef" path="view.pageDefs.ForecastAndOrdersPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
