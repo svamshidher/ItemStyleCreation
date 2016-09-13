@@ -105,6 +105,10 @@ public class ItemOHQandAttr {
         } catch (SQLException sqlerr) {
         throw new JboException(sqlerr);
         }
+            try {
+                conn.close();
+            } catch (SQLException e) {
+            }
        
         }
         public Connection getDbConnection() throws Exception

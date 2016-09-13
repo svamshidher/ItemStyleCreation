@@ -103,6 +103,10 @@ public class ForecastAndOrders {
      getOrderAmount().resetValue();
         AdfFacesContext.getCurrentInstance().addPartialTarget(getTotalPercentage());
         AdfFacesContext.getCurrentInstance().addPartialTarget(getOrderAmount());
+        try {
+            conn.close();
+        } catch (SQLException e) {
+        }
     }
     public Connection getDbConnection() throws Exception
          {
