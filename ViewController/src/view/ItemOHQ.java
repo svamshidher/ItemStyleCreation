@@ -6,7 +6,7 @@ public class ItemOHQ {
     }
     private String childSKU;
     private String childSKUDescr;
-    private String Color;
+    private String color;
     private String itemSize;
     private String fit;
     private String itemType;
@@ -144,6 +144,14 @@ public class ItemOHQ {
         this.collar = collar;
     }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
     public String getCollar() {
         return collar;
     }
@@ -153,13 +161,6 @@ public class ItemOHQ {
         this.childSKU = childSKU;
     }
 
-    public void setColor(String Color) {
-        this.Color = Color;
-    }
-
-    public String getColor() {
-        return Color;
-    }
 
     public String getChildSKU() {
         return childSKU;

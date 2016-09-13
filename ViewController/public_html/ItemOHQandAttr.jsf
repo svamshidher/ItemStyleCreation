@@ -4,7 +4,8 @@
     <af:document title="Item OHQ And Attributes" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
-        <af:spacer width="10" height="10" id="s1"/>
+            <af:outputText value="Item OHQ And Attributes" id="ot9" inlineStyle="color:Olive; font-size:large;"/>
+            <af:spacer height="20" id="s1"/>
             <af:selectOneChoice value="#{bindings.Mastersku.inputValue}" label="Master Style SKU:"
                                 required="#{bindings.Mastersku.hints.mandatory}"
                                 shortDesc="#{bindings.Mastersku.hints.tooltip}" id="soc1"
@@ -21,6 +22,22 @@
                 <af:button text="Refresh On-Hand and Attributes" id="b2"/>
             </af:panelGroupLayout>
              <af:spacer height="15" id="s4"/>
+             <af:spacer width="85%" id="s5"/>
+            <af:outputText value="On Hand Quantity" id="ot8" inlineStyle="font-size:large;"/>
+            <af:panelGroupLayout id="pgl2" layout="horizontal">
+            <af:inputText value="#{bindings.Mastersku.inputValue}" id="it16" columns="15"/>
+            <af:inputText  id="it17" columns="14" binding="#{ItemOHQandAttr.masterSKUDescrbinding}"/>
+            <af:inputText  id="it18" columns="14" binding="#{ItemOHQandAttr.colorBinding}"/>
+            <af:inputText  id="it19" columns="14" binding="#{ItemOHQandAttr.sizeBinding}"/>
+            <af:inputText  id="it20" columns="15" binding="#{ItemOHQandAttr.fitBinding}"/>
+            <af:inputText  id="it21" columns="15" value="Shirt"/>
+            <af:inputText  id="it22" columns="15" value="Fall"/>
+            <af:inputText  id="it23" columns="15" value="Rounded"/> 
+            <af:inputText  id="it24" columns="14" value="NA"/>
+            <af:inputText  id="it25" columns="14" value="Annual"/>
+            <af:inputText  id="it26" columns="14" value="Online only"/> 
+            <af:inputText  id="it27" columns="14" value="June"/>
+            </af:panelGroupLayout>
             <af:table var="row" rowBandingInterval="0" id="t1" binding="#{ItemOHQandAttr.itemOHQtable}">
                 <af:column sortable="false" headerText="Child SKU" id="c1">
                     <af:outputText value="#{row.childSKU}" id="ot1"/>
@@ -29,7 +46,7 @@
                     <af:outputText value="#{row.childSKUDescr}" id="ot2"/>
                 </af:column>
                 <af:column sortable="false" headerText="Color" id="c3">
-                    <af:outputText value="#{row.childSKUDescr}" id="ot3"/>
+                    <af:outputText value="#{row.color}" id="ot3"/>
                 </af:column>
                <af:column sortable="false" headerText="Size" id="c4">
                     <af:outputText value="#{row.itemSize}" id="ot4"/>

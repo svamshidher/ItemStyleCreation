@@ -4,7 +4,9 @@
         xmlns:h="http://java.sun.com/jsf/html">
     <af:document title="Forecast And Orders" id="d1">
         <af:messages id="m1"/>
-        <af:form id="f1">           
+        <af:form id="f1">          
+           <af:outputText value="Forecast And Orders" id="ot9" inlineStyle="color:Olive; font-size:large;"/>
+            <af:spacer height="20" id="s1"/>
             <af:selectOneChoice value="#{bindings.Mastersku2.inputValue}" label="Master SKU"
                                 required="#{bindings.Mastersku2.hints.mandatory}"
                                 shortDesc="#{bindings.Mastersku2.hints.tooltip}" id="soc2"                               
@@ -15,11 +17,13 @@
             </af:selectOneChoice>
             <af:inputText label="Total Order for Style" id="it1" binding="#{ForecastAndOrders.totalOrder}" autoSubmit="true"/>
             <af:inputText label="Sales forecast Percentage" id="it3" binding="#{ForecastAndOrders.totalPercentage}"/>
+             <af:spacer height="10" id="s2"/>
             <af:panelGroupLayout id="pgl1">
             <af:button text="Create Purchase Order" id="b1"/>
             <af:button text="Create Sales Order" id="b2"/>
             <af:button text="Create Sales Forecast" id="b3"/>
             </af:panelGroupLayout>
+             <af:spacer height="10" id="s3"/>
             <af:table var="row" rowBandingInterval="0" id="t1" binding="#{ForecastAndOrders.orderTable}">
                 <af:column sortable="false" headerText="Child SKU" id="c1">
                     <af:outputText value="#{row.childSKU}" id="ot1"/>

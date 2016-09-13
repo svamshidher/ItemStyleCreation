@@ -1,14 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-    <af:document title="ItemCreation.jsf" id="d1">
-        <af:messages id="m1"/>
+    <af:document title="Item Creation" id="d1">
+         <af:messages id="m1"/>
         <af:form id="f1">
+            <af:outputText value="Item Creation" id="ot1" inlineStyle="color:Olive; font-size:large;"/>
+                        <af:spacer height="20" id="s1"/>
             <af:panelGroupLayout id="pgl1" layout="horizontal">
                 <af:inputText label="Style SKU:" id="it24" autoSubmit="true" binding="#{ItemCreation.masterSKU}"/>
                 <af:inputText label="Style SKU Descr:" id="it25" autoSubmit="true"
                               binding="#{ItemCreation.masterSKUDescription}"/>
             </af:panelGroupLayout>
+                        <af:spacer height="10" id="s2"/>
          <af:panelGroupLayout>
             <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
                        id="b2"/>
@@ -17,6 +20,7 @@
             <af:button actionListener="#{bindings.Delete.execute}" text="Delete" disabled="#{!bindings.Delete.enabled}"
                        id="b3"/>
          </af:panelGroupLayout>
+                     <af:spacer height="10" id="s3"/>
             <af:table value="#{bindings.XxChildSkusView1.collectionModel}" var="row"
                       rows="#{bindings.XxChildSkusView1.rangeSize}"
                       emptyText="#{bindings.XxChildSkusView1.viewable ? 'No data to display.' : 'Access Denied.'}"

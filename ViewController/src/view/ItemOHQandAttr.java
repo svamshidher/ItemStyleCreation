@@ -18,6 +18,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import oracle.adf.view.rich.component.rich.data.RichTable;
+import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 import oracle.adf.view.rich.context.AdfFacesContext;
 
@@ -31,6 +32,10 @@ public class ItemOHQandAttr {
     private RichSelectOneChoice masterSku;
     private List<ItemOHQ> AttrList= new ArrayList();
     private RichTable itemOHQtable;
+    private RichInputText masterSKUDescrbinding;
+    private RichInputText colorBinding;
+    private RichInputText sizeBinding;
+    private RichInputText fitBinding;
 
     public ItemOHQandAttr() {
     }
@@ -116,5 +121,37 @@ public class ItemOHQandAttr {
 
     public RichTable getItemOHQtable() {
         return itemOHQtable;
+    }
+
+    public void setMasterSKUDescrbinding(RichInputText masterSKUDescrbinding) {
+        this.masterSKUDescrbinding = masterSKUDescrbinding;
+    }
+
+    public RichInputText getMasterSKUDescrbinding() {
+        return masterSKUDescrbinding;
+    }
+
+    public void setColorBinding(RichInputText colorBinding) {
+        this.colorBinding = colorBinding;
+    }
+
+    public RichInputText getColorBinding() {
+        return colorBinding;
+    }
+
+    public void setSizeBinding(RichInputText sizeBinding) {
+        this.sizeBinding = sizeBinding;
+    }
+
+    public RichInputText getSizeBinding() {
+        return sizeBinding;
+    }
+
+    public void setFitBinding(RichInputText fitBinding) {
+        this.fitBinding = fitBinding;
+    }
+
+    public RichInputText getFitBinding() {
+        return fitBinding;
     }
 }
