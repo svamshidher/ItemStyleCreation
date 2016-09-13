@@ -128,7 +128,7 @@ public class ForecastAndOrders {
         else{
            percentage= getTotalPercentage().getValue().toString();
         }
-       float totalPercentage=Float.parseFloat(percentage)+Float.parseFloat(valueChangeEvent.getNewValue().toString());
+       float totalPercentage=Float.parseFloat(percentage)+Float.parseFloat(valueChangeEvent.getNewValue().toString())-Float.parseFloat(valueChangeEvent.getOldValue().toString());
         String totalOrder = getTotalOrder().getValue().toString();
         float value= Float.parseFloat(totalOrder);
         System.out.println("value is"+value);
