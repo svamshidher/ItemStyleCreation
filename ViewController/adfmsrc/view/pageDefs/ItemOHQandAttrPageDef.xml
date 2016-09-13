@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="ItemOHQandAttrPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ForecastVO1" RangeSize="25" DataControl="AppModuleDataControl" id="ForecastVO1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="ForecastVO1Iterator" StaticList="false" Uses="LOV_Mastersku" id="Mastersku"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

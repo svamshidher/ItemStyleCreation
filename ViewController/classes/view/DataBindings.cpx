@@ -4,10 +4,12 @@
   <pageMap>
     <page path="/ItemCreation.jsf" usageId="view_ItemCreationPageDef"/>
     <page path="/ForecastAndOrders.jsf" usageId="view_ForecastAndOrdersPageDef"/>
+    <page path="/ItemOHQandAttr.jsf" usageId="view_ItemOHQandAttrPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_ItemCreationPageDef" path="view.pageDefs.ItemCreationPageDef"/>
     <page id="view_ForecastAndOrdersPageDef" path="view.pageDefs.ForecastAndOrdersPageDef"/>
+    <page id="view_ItemOHQandAttrPageDef" path="view.pageDefs.ItemOHQandAttrPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"

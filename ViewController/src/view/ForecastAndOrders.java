@@ -59,16 +59,6 @@ public class ForecastAndOrders {
     }
 
     public void masterSKUValueChangeListner(ValueChangeEvent valueChangeEvent) {
-     /*   RichSelectOneChoice masterSKU= getMasterSKU();
-        System.out.println("Inside Value Change Listner"+masterSKU.getValue());
-        BindingContext bctx = BindingContext.getCurrent();
-          BindingContainer bindings = bctx.getCurrentBindingsEntry();
-        OperationBinding operationBinding = bindings.getOperationBinding("getChildSKUDetails");
-          //optional
-          operationBinding.getParamsMap().put("masterSKU",masterSKU.getValue());
-         //invoke method
-          operationBinding.execute();*/
-          
         Connection conn = null;
         ResultSet rs = null;
         try 

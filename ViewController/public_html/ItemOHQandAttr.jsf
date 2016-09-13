@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Item OHQ And Attributes" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+        <af:spacer width="10" height="10" id="s1"/>
+            <af:selectOneChoice value="#{bindings.Mastersku.inputValue}" label="Master Style SKU:"
+                                required="#{bindings.Mastersku.hints.mandatory}"
+                                shortDesc="#{bindings.Mastersku.hints.tooltip}" id="soc1"
+                                binding="#{ItemOHQandAttr.masterSku}"
+                                autoSubmit="true"
+                                valueChangeListener="#{ItemOHQandAttr.masterSKUValueChangeListner}">
+                <f:selectItems value="#{bindings.Mastersku.items}" id="si1"/>
+                <f:validator binding="#{bindings.Mastersku.validator}"/>
+            </af:selectOneChoice>
+            <af:spacer width="10" height="10" id="s2"/>
+            <af:panelGroupLayout id="pgl1" halign="right" layout="horizontal">
+                <af:button text="Cascade and Update Changes" id="b1"/>
+                <af:spacer width="20" id="s3"/>
+                <af:button text="Refresh On-Hand and Attributes" id="b2"/>
+            </af:panelGroupLayout>
+             <af:spacer height="15" id="s4"/>
+            <af:table var="row" rowBandingInterval="0" id="t1" binding="#{ItemOHQandAttr.itemOHQtable}">
+                <af:column sortable="false" headerText="Child SKU" id="c1">
+                    <af:outputText value="#{row.childSKU}" id="ot1"/>
+                </af:column>
+               <af:column sortable="false" headerText="Child SKU Description" id="c2">
+                    <af:outputText value="#{row.childSKUDescr}" id="ot2"/>
+                </af:column>
+                <af:column sortable="false" headerText="Color" id="c3">
+                    <af:outputText value="#{row.childSKUDescr}" id="ot3"/>
+                </af:column>
+               <af:column sortable="false" headerText="Size" id="c4">
+                    <af:outputText value="#{row.itemSize}" id="ot4"/>
+                </af:column>
+               <af:column sortable="false" headerText="Fit" id="c5">
+                    <af:outputText value="#{row.fit}" id="ot5"/>
+                </af:column>
+               <af:column sortable="false" headerText="Type" id="c6">
+                    <af:outputText value="#{row.itemType}" id="ot6"/>
+                </af:column>
+                <af:column sortable="false" headerText="Season" id="c7">
+                    <af:outputText value="#{row.season}" id="ot7"/>
+                </af:column>
+                <af:column sortable="false" headerText="Collar" id="c8">
+                    <af:inputText label="Collar" id="it1" value="#{row.collar}"/>
+                </af:column>
+                <af:column sortable="false" headerText="Inseam" id="c9">
+                    <af:inputText label="Inseam" id="it2" value="NA"/>
+                </af:column>
+                <af:column sortable="false" headerText="Category1" id="c10">
+                    <af:inputText label="Category1" id="it3" value="#{row.category1}"/>
+                </af:column>
+                <af:column sortable="false" headerText="Category2" id="c11">
+                    <af:inputText label="Category2" id="it4" value="#{row.category2}"/>
+                </af:column>
+                <af:column sortable="false" headerText="Category3" id="c12">
+                    <af:inputText label="Category3" id="it5" value="#{row.category3}"/>
+                </af:column>
+                <af:column sortable="false" headerText="Store1" id="c13">
+                    <af:inputText label="Store1" id="it6" value="#{row.store1}"/>
+                </af:column>
+                <af:column sortable="false" headerText="Store2" id="c14">
+                    <af:inputText label="Store2" id="it7" value="#{row.store2}"/>
+                </af:column>
+                <af:column sortable="false" headerText="Store3" id="c15">
+                    <af:inputText label="Store3" id="it8" value="#{row.store3}"/>
+                </af:column>
+                <af:column sortable="false" headerText="Store4" id="c16">
+                    <af:inputText label="Store4" id="it9" value="#{row.store4}"/>
+                </af:column>
+                <af:column sortable="false" headerText="Store5" id="c17">
+                    <af:inputText label="Store5" id="it10" value="#{row.store5}"/>
+                </af:column>
+                <af:column sortable="false" headerText="Store6" id="c18">
+                    <af:inputText label="Store6" id="it11" value="#{row.store6}"/>
+                </af:column>
+                <af:column sortable="false" headerText="Store7" id="c19">
+                    <af:inputText label="Store7" id="it12" value="#{row.store7}"/>
+                </af:column>
+                <af:column sortable="false" headerText="Store8" id="c20">
+                    <af:inputText label="Store8" id="it13" value="#{row.store8}"/>
+                </af:column>
+                <af:column sortable="false" headerText="WH1" id="c21">
+                    <af:inputText label="WH1" id="it14" value="#{row.wh1}"/>
+                </af:column>
+                <af:column sortable="false" headerText="WH2" id="c22">
+                    <af:inputText label="WH2" id="it15" value="#{row.wh2}"/>
+                </af:column>               
+            </af:table>
+        </af:form>
+    </af:document>
+</f:view>
